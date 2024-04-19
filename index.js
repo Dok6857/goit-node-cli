@@ -20,19 +20,19 @@ const options = program.opts();
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case 'list':
-      console.log(listContacts());
+      console.log(await listContacts());
       break;
 
     case 'get':
-      console.log(getContactById(id));
+      console.log(await getContactById(id));
       break;
 
     case 'add':
-      console.log(addContact(name, email, phone));
+      console.log(await addContact(name, email, phone));
       break;
 
     case 'remove':
-      console.log(removeContact(id));
+      console.log(await removeContact(id));
       break;
 
     default:
